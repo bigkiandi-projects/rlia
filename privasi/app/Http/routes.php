@@ -10,15 +10,8 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get('/', 'SavePost@read_data');
+Route::get('/', 'HomeController@index');
 
-Route::post('prosestambah', 'SavePost@tambahdata' );
+Route::auth();
 
-Route::get('get/{id_post}', 'SavePost@view_data');
-
-Route::get('up/{id_post}', 'SavePost@update_view');
-
-Route::put('up_action/{id_post}', 'SavePost@update_act');
-
-Route::get('del/{id_post}', 'SavePost@delete');
-
+Route::get('/home', 'HomeController@index');
